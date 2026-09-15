@@ -1,0 +1,98 @@
+---
+import brandLogo from '../assets/brand/roofingshingles-calculator-logo.svg';
+
+const footerLinks = [
+  { href: '#workflow', label: 'How it works' },
+  { href: '#features', label: 'What you get' },
+  { href: '#pricing', label: 'Pricing' },
+  { href: '#faq', label: 'FAQ' },
+];
+---
+
+<footer>
+  <div class="wrap footer-inner">
+    <div>
+      <a class="footer-logo" href="/" aria-label="RoofingShingles Calculator homepage">
+        <img
+          src={brandLogo.src}
+          width="560"
+          height="140"
+          alt="RoofingShingles Calculator"
+          decoding="async"
+        />
+      </a>
+      <span class="tagline">Measurements in. Profitable estimate out.</span>
+    </div>
+    <nav class="footer-links" aria-label="Footer">
+      {footerLinks.map((link) => (
+        <a href={link.href}>{link.label}</a>
+      ))}
+    </nav>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background: var(--cream);
+    color: var(--navy);
+    border-top: 1px solid var(--border);
+    padding: 38px 0;
+  }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .footer-logo {
+    display: inline-flex;
+    line-height: 0;
+    text-decoration: none;
+  }
+
+  .footer-logo img {
+    display: block;
+    width: 240px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  @media (min-width: 1024px) {
+    .footer-logo img {
+      width: 285px;
+    }
+  }
+
+  .tagline {
+    display: block;
+    color: var(--muted);
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+  .footer-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    font-size: 14px;
+  }
+
+  .footer-links a {
+    text-decoration: none;
+    color: var(--navy);
+  }
+
+  .footer-links a:hover {
+    color: var(--red);
+  }
+
+  @media (max-width: 850px) {
+    .footer-inner {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+</style>

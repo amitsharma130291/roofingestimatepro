@@ -1,0 +1,104 @@
+---
+const metrics = [
+  { label: 'Estimated margin', value: '35.0%', variant: 'base' },
+  { label: 'Actual margin', value: '24.0%', variant: 'loss' },
+  { label: 'Material variance', value: '+$608', variant: 'loss' },
+  { label: 'Labor variance', value: '+$740', variant: 'loss' },
+];
+---
+
+<section class="section" id="profitability">
+  <div class="wrap">
+    <div class="eyebrow">Estimate versus actual</div>
+    <h2>Learn where the margin moved after the job</h2>
+    <p class="section-intro">
+      Compare estimated and actual costs so the next price uses better
+      assumptions.
+    </p>
+
+    <div class="profit-panel">
+      <div class="profit-metrics">
+        {metrics.map((metric) => (
+          <div class={`mini ${metric.variant === 'loss' ? 'mini-loss' : ''}`}>
+            <span>{metric.label}</span>
+            <strong>{metric.value}</strong>
+          </div>
+        ))}
+      </div>
+      <div class="insight">
+        <span class="eyebrow insight-eyebrow">Illustrative product example</span>
+        <h3>
+          Replacement jobs are averaging 6.9% more material than estimated.
+        </h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .profit-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-top: 32px;
+  }
+
+  .profit-metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .mini {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px;
+  }
+
+  .mini span {
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .mini strong {
+    display: block;
+    font-size: 1.9rem;
+    margin-top: 4px;
+  }
+
+  .mini-loss strong {
+    color: var(--red);
+  }
+
+  .insight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #e8f2ed;
+    border: 1px solid #cfe2d8;
+    border-radius: 18px;
+    padding: 28px;
+    color: var(--green);
+  }
+
+  .insight-eyebrow {
+    color: inherit;
+  }
+
+  .insight h3 {
+    margin-top: 8px;
+  }
+
+  @media (max-width: 850px) {
+    .profit-panel {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .profit-metrics {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

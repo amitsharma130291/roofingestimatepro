@@ -1,0 +1,72 @@
+---
+const features = [
+  {
+    title: 'Material quantities',
+    body: 'Calculate shingles, underlayment, starter, ridge and other system components.',
+  },
+  {
+    title: 'Labor and productivity',
+    body: 'Build labor cost from per-square assumptions or production rates.',
+  },
+  {
+    title: 'True job cost',
+    body: 'Include disposal, equipment, overhead and other costs that affect profit.',
+  },
+  {
+    title: 'Target-margin pricing',
+    body: 'Work backward from the margin goal to the required customer price.',
+  },
+  {
+    title: 'Good / Better / Best',
+    body: 'Compare multiple shingle systems without losing sight of margin.',
+  },
+  {
+    title: 'Estimate versus actual',
+    body: 'Record actual costs and improve assumptions for the next job.',
+  },
+];
+---
+
+<section class="section" id="features">
+  <div class="wrap">
+    <div class="eyebrow">What you get</div>
+    <h2>The numbers needed to price a roofing job with confidence</h2>
+    <div class="features">
+      {features.map((feature) => (
+        <article class="feature card">
+          <h3>{feature.title}</h3>
+          <p>{feature.body}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 36px;
+  }
+
+  .feature {
+    border-radius: 16px;
+  }
+
+  .feature h3 {
+    margin: 0 0 9px;
+  }
+
+  .feature p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 850px) {
+    .features {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

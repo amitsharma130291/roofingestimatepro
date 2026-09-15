@@ -1,0 +1,62 @@
+---
+---
+
+<aside class="card snapshot" aria-label="Static sample estimate">
+  <div class="card-head">
+    <span class="eyebrow">Sample estimate snapshot</span>
+    <span class="pill">Margin protected</span>
+  </div>
+  <div class="project">Harrison Residence</div>
+  <div class="metric">
+    <span>Roof size</span>
+    <strong>34.38 squares</strong>
+  </div>
+  <div class="metric">
+    <span>True job cost</span>
+    <strong>$12,259</strong>
+  </div>
+  <div class="metric">
+    <span>Target margin</span>
+    <strong>35%</strong>
+  </div>
+  <div class="price-result">
+    <span>Recommended customer price</span>
+    <strong>$18,860</strong>
+  </div>
+  <p class="note">Illustrative product preview</p>
+</aside>
+
+<style>
+  .snapshot {
+    box-shadow: 12px 12px 0 var(--gold-shadow);
+  }
+
+  .card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+  }
+
+  .pill {
+    display: inline-flex;
+    padding: 6px 10px;
+    border-radius: 99px;
+    background: #e8f2ed;
+    color: var(--green);
+    font-weight: 850;
+    font-size: 12px;
+  }
+
+  .project {
+    font-size: 26px;
+    font-weight: 900;
+    margin: 18px 0;
+  }
+
+  @media (max-width: 480px) {
+    .snapshot {
+      box-shadow: 8px 8px 0 var(--gold-shadow);
+    }
+  }
+</style>

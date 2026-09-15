@@ -1,0 +1,57 @@
+---
+const faqs = [
+  {
+    q: 'Does Roofing Estimate Pro measure the roof?',
+    a: 'No. It begins with measurements you already have from manual work, a supplier or another roof-report source.',
+  },
+  {
+    q: 'Is this a monthly subscription?',
+    a: 'No. The planned price is $99 for lifetime access.',
+  },
+  {
+    q: 'Does it include a CRM, scheduling or payments?',
+    a: 'No. It is intentionally focused on quantities, job costing, pricing, estimates and profitability.',
+  },
+  {
+    q: 'Where is estimate data stored?',
+    a: 'The planned product is local-first. This homepage does not create, accept or store estimate data.',
+  },
+];
+---
+
+<section class="section" id="faq">
+  <div class="wrap faq">
+    <div class="eyebrow">FAQ</div>
+    <h2>Useful details before you choose</h2>
+    {faqs.map((item) => (
+      <details>
+        <summary>{item.q}</summary>
+        <p>{item.a}</p>
+      </details>
+    ))}
+  </div>
+</section>
+
+<style>
+  .faq {
+    max-width: 820px;
+  }
+
+  .faq details {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin: 10px 0;
+  }
+
+  .faq summary {
+    cursor: pointer;
+    font-weight: 800;
+  }
+
+  .faq details p {
+    color: var(--muted);
+    margin: 12px 0 0;
+  }
+</style>

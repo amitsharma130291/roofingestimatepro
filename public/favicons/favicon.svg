@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title" viewBox="0 0 128 128">
+  <title id="title">RoofingShingles Calculator</title>
+  <rect width="128" height="128" rx="28" fill="#14253A"/>
+  <path d="M17 67 64 26l47 41H94L64 42 34 67z" fill="#F5B641"/>
+  <path d="M34 70h60v39H34z" fill="#FFFAF0"/>
+  <path d="M56 81h17v28H56z" fill="#C94E32"/>
+</svg>

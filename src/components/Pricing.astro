@@ -1,0 +1,100 @@
+---
+const included = [
+  'Unlimited local estimates',
+  'Material, labor and true-cost workflow',
+  'Target-margin pricing',
+  'Customer estimate and proposal views',
+  'Estimate-versus-actual review',
+];
+---
+
+<section class="section pricing" id="pricing">
+  <div class="wrap">
+    <div class="price-box">
+      <div>
+        <div class="eyebrow on-dark">Simple lifetime pricing</div>
+        <h2>One roofing job can pay for it. Keep it for life.</h2>
+        <div class="price">$99 <small>lifetime</small></div>
+      </div>
+      <div>
+        <p>
+          Planned one-time access to Roofing Estimate Pro. No recurring
+          software subscription.
+        </p>
+        <ul class="checklist">
+          {included.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+        <span class="btn btn-disabled" role="link" aria-disabled="true">
+          Purchase access coming soon
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .pricing {
+    background: #f4e6c9;
+  }
+
+  .price-box {
+    background: var(--navy);
+    color: var(--white);
+    border-radius: 24px;
+    padding: 38px;
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 42px;
+    align-items: center;
+  }
+
+  .price {
+    font-size: 3.6rem;
+    font-weight: 950;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    color: var(--gold);
+    margin-top: 10px;
+  }
+
+  .price small {
+    font-size: 1.1rem;
+    letter-spacing: 0;
+    font-weight: 700;
+  }
+
+  .checklist {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    font-size: 14px;
+    margin: 20px 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .checklist li::before {
+    content: '\2713';
+    color: var(--gold);
+    font-weight: 900;
+    margin-right: 8px;
+  }
+
+  @media (max-width: 850px) {
+    .price-box {
+      grid-template-columns: 1fr;
+    }
+
+    .checklist {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .price {
+      font-size: 2.8rem;
+    }
+  }
+</style>

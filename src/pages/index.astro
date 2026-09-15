@@ -1,0 +1,156 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import EstimateSnapshot from '../components/EstimateSnapshot.astro';
+import Workflow from '../components/Workflow.astro';
+import ProposalComparison from '../components/ProposalComparison.astro';
+import ProfitabilityProof from '../components/ProfitabilityProof.astro';
+import Features from '../components/Features.astro';
+import Pricing from '../components/Pricing.astro';
+import FAQ from '../components/FAQ.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Roofing Estimate Pro — Turn Measurements Into Profitable Estimates';
+const description =
+  'Turn existing roof measurements into material quantities, true job cost, target-margin pricing and professional customer estimates—without another monthly subscription.';
+
+const valueStrip = [
+  { stat: '$99 once', detail: 'Lifetime pricing planned' },
+  { stat: 'Any measurement source', detail: 'Manual, supplier or third-party report' },
+  { stat: 'Focused workflow', detail: 'Estimating and job costing without a bloated CRM' },
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+
+  <main id="main">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Focused roofing estimating for small contractors</p>
+          <h1>Turn Roof Measurements Into <span class="accent">Profitable Estimates</span></h1>
+          <p class="lead">
+            Already have the measurements? Turn them into material
+            quantities, true job cost, target-margin pricing and a
+            professional customer estimate.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#pricing">See lifetime access</a>
+            <a class="btn btn-secondary" href="#workflow">See how it works</a>
+          </div>
+          <p class="reassure">
+            Use measurements from any source · No monthly subscription · Local-first
+          </p>
+        </div>
+        <EstimateSnapshot />
+      </div>
+    </section>
+
+    <section class="strip">
+      <div class="wrap strip-grid">
+        {valueStrip.map((item) => (
+          <div class="strip-item">
+            <b>{item.stat}</b>
+            <span>{item.detail}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <Workflow />
+    <ProposalComparison />
+    <ProfitabilityProof />
+    <Features />
+    <Pricing />
+    <FAQ />
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: 82px 0;
+    background: linear-gradient(135deg, var(--cream), #fffdf8 58%, #f8e9c6);
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 56px;
+    align-items: center;
+  }
+
+  .lead {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 640px;
+  }
+
+  .actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+  }
+
+  .reassure {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 16px;
+  }
+
+  .strip {
+    background: var(--white);
+    border-block: 1px solid var(--border);
+  }
+
+  .strip-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .strip-item {
+    padding: 24px;
+    border-right: 1px solid var(--border);
+  }
+
+  .strip-item:last-child {
+    border-right: 0;
+  }
+
+  .strip-item b {
+    display: block;
+    font-size: 22px;
+  }
+
+  .strip-item span {
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  @media (max-width: 850px) {
+    .hero {
+      padding: 58px 0;
+    }
+
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    .strip-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .strip-item {
+      border-right: 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .strip-item:last-child {
+      border-bottom: 0;
+    }
+  }
+</style>

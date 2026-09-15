@@ -1,0 +1,107 @@
+---
+---
+
+<section class="section dark-section" id="proposal">
+  <div class="wrap">
+    <div class="eyebrow on-dark">Two useful views</div>
+    <h2>Cost it like a contractor. Present it like a professional.</h2>
+    <p class="section-intro">
+      One set of job numbers supports both the private costing view and the
+      customer-facing estimate.
+    </p>
+
+    <div class="compare">
+      <article class="card cost-card" aria-label="Sample contractor cost view">
+        <div class="sample-label">Contractor view</div>
+        <h3>Job cost worksheet</h3>
+        <div class="metric">
+          <span>Materials</span>
+          <strong>$6,125</strong>
+        </div>
+        <div class="metric">
+          <span>Labor</span>
+          <strong>$3,781</strong>
+        </div>
+        <div class="metric">
+          <span>Disposal &amp; equipment</span>
+          <strong>$754</strong>
+        </div>
+        <div class="metric">
+          <span>Overhead</span>
+          <strong>$1,599</strong>
+        </div>
+        <div class="price-result cost-total">
+          <span>True cost at 35% target margin</span>
+          <strong>$18,860</strong>
+        </div>
+      </article>
+
+      <article class="card proposal-card" aria-label="Sample customer proposal">
+        <div class="sample-label proposal-sample-label">Customer proposal</div>
+        <h3>Harrison Residence</h3>
+        <p><strong>Standard architectural shingle system</strong></p>
+        <p>
+          Tear-off, underlayment, starter, shingles, ridge cap, ventilation
+          and cleanup.
+        </p>
+        <div class="metric">
+          <span>Valid for</span>
+          <strong>30 days</strong>
+        </div>
+        <div class="price-result">
+          <span>Customer price</span>
+          <strong>$18,860</strong>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 34px;
+  }
+
+  .cost-card {
+    background: #1e334c;
+    border: 1px solid #324a65;
+    color: var(--white);
+  }
+
+  .cost-card .metric {
+    border-bottom-color: #324a65;
+  }
+
+  .cost-total {
+    background: #0e1c2c;
+  }
+
+  .proposal-card {
+    color: var(--navy);
+  }
+
+  .proposal-card .metric {
+    border-bottom-color: var(--border);
+  }
+
+  .sample-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 900;
+    color: var(--gold);
+  }
+
+  .proposal-sample-label {
+    color: var(--red);
+  }
+
+  @media (max-width: 850px) {
+    .compare {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

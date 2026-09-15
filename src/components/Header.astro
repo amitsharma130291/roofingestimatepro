@@ -1,0 +1,196 @@
+---
+import brandLogo from '../assets/brand/roofingshingles-calculator-logo.svg';
+
+const navLinks = [
+  { href: '#workflow', label: 'How it works' },
+  { href: '#features', label: 'What you get' },
+  { href: '#pricing', label: 'Pricing' },
+  { href: '#faq', label: 'FAQ' },
+];
+---
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand-logo" href="/" aria-label="RoofingShingles Calculator homepage">
+      <img
+        src={brandLogo.src}
+        width="560"
+        height="140"
+        alt="RoofingShingles Calculator"
+        decoding="async"
+      />
+    </a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-input" />
+    <label for="nav-toggle" class="nav-toggle-btn mobile-menu-button" aria-label="Toggle menu">
+      <span></span>
+    </label>
+
+    <nav class="nav-links" aria-label="Primary">
+      {navLinks.map((link) => (
+        <a href={link.href}>{link.label}</a>
+      ))}
+      <a class="btn btn-primary" href="#pricing">See lifetime access</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: var(--cream);
+    color: var(--navy);
+    border-bottom: 1px solid rgba(20, 37, 58, 0.1);
+  }
+
+  .nav-inner {
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  @media (min-width: 768px) {
+    .nav-inner {
+      min-height: 84px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .nav-inner {
+      min-height: 96px;
+    }
+  }
+
+  /* Brand logo -- imported SVG, sized responsively; see Header.astro import.
+     Aspect ratio (4:1) and colors are baked into the SVG itself and must
+     never be altered here (no filters/shadows/recoloring). */
+  .brand-logo {
+    display: inline-flex;
+    flex: 0 1 auto;
+    line-height: 0;
+    text-decoration: none;
+    min-width: 0;
+  }
+
+  .brand-logo img {
+    display: block;
+    width: 210px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  @media (min-width: 480px) {
+    .brand-logo img {
+      width: 250px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .brand-logo img {
+      width: 285px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .brand-logo img {
+      width: 320px;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .brand-logo img {
+      width: 360px;
+    }
+  }
+
+  @media (max-width: 479px) {
+    .brand-logo {
+      max-width: calc(100vw - 96px);
+    }
+
+    .mobile-menu-button {
+      flex: 0 0 auto;
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    font-size: 14px;
+  }
+
+  .nav-links a:not(.btn) {
+    text-decoration: none;
+    color: var(--navy);
+  }
+
+  .nav-links a:not(.btn):hover {
+    color: var(--red);
+  }
+
+  .nav-toggle-input,
+  .nav-toggle-btn {
+    display: none;
+  }
+
+  @media (max-width: 850px) {
+    .nav-toggle-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .nav-toggle-btn span,
+    .nav-toggle-btn span::before,
+    .nav-toggle-btn span::after {
+      content: '';
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--navy);
+      position: relative;
+    }
+
+    .nav-toggle-btn span::before {
+      position: absolute;
+      top: -7px;
+    }
+
+    .nav-toggle-btn span::after {
+      position: absolute;
+      top: 7px;
+    }
+
+    .nav-links {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      align-items: flex-start;
+      background: var(--cream);
+      border-bottom: 1px solid rgba(20, 37, 58, 0.1);
+      padding: 12px 20px 20px;
+      gap: 16px;
+      display: none;
+    }
+
+    .nav-links .btn {
+      width: 100%;
+    }
+
+    .nav-toggle-input:checked ~ .nav-links {
+      display: flex;
+    }
+  }
+</style>
